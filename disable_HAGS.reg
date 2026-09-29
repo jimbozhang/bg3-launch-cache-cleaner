@@ -1,0 +1,13 @@
+Windows Registry Editor Version 5.00
+
+; Disables Hardware-accelerated GPU Scheduling (HAGS), a Windows 10/11
+; feature that can trigger early-launch crashes in BG3 on newer NVIDIA
+; drivers. Import as administrator, then REBOOT. To re-enable: set HwSchMode
+; to 1 (or delete the value) and reboot.
+;
+; The same operation via the Windows GUI:
+;   Settings > System > Display > Graphics > "Change default graphics
+;   settings" > turn off "Hardware-accelerated GPU scheduling" > reboot.
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\GraphicsDrivers]
+"HwSchMode"=dword:00000000
